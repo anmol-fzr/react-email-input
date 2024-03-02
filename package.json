@@ -1,0 +1,66 @@
+{
+  "name": "react-email-input",
+  "version": "0.0.1",
+  "description": "Email Input for ReactJS for Better UX",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "npm test",
+    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "prettier": "prettier --write \"{src,types,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
+    "fix-lint": "eslint . --ext .ts --ext .tsx --fix",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anmol-fzr/react-email-input.git"
+  },
+  "keywords": [
+    "react",
+    "reactjs",
+    "email",
+    "input",
+    "ux"
+  ],
+  "author": "anmol-fzr",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/anmol-fzr/react-email-input/issues"
+  },
+  "homepage": "https://github.com/anmol-fzr/react-email-input#readme",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.6.17",
+    "@storybook/addon-interactions": "^7.6.17",
+    "@storybook/addon-links": "^7.6.17",
+    "@storybook/addon-onboarding": "^1.0.11",
+    "@storybook/blocks": "^7.6.17",
+    "@storybook/react": "^7.6.17",
+    "@storybook/react-vite": "^7.6.17",
+    "@storybook/test": "^7.6.17",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
+    "autoprefixer": "^10.4.18",
+    "postcss": "^8.4.35",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.6.17",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.3.3",
+    "@typescript-eslint/eslint-plugin": "^6.13.1",
+    "@typescript-eslint/parser": "^6.13.1",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "3.0.3"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "tailwind-merge": "^2.2.1"
+  }
+}

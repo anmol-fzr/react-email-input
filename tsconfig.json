@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es2016",
+    "module": "ESNext",
+    "declaration": true,
+    "outDir": "dist",
+    "jsx": "react",
+    "moduleResolution": "node",
+    "declarationDir": "dist",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true
+  },
+  "include": [
+    "src"
+  ]
+}
