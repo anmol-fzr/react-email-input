@@ -1,6 +1,6 @@
 {
   "name": "react-js-email-input",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Email Input for ReactJS for Better UX",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
