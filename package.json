@@ -1,11 +1,12 @@
 {
-  "name": "react-email-input",
+  "name": "react-js-email-input",
   "version": "0.0.1",
   "description": "Email Input for ReactJS for Better UX",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "npm test",
+    "prepublish": "tsc",
     "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,types,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "fix-lint": "eslint . --ext .ts --ext .tsx --fix",

@@ -1,8 +1,8 @@
 import { twMerge } from "tailwind-merge";
 import React, {
+  CSSProperties,
   ComponentPropsWithRef,
   ComponentPropsWithoutRef,
-  ReactNode,
   useRef,
   useState,
 } from "react";
@@ -13,13 +13,26 @@ interface InputProps extends Omit<ComponentPropsWithRef<"input">, "onChange"> {
   onChange: (val: string) => void;
   tlds?: string[];
   mails?: string[];
+  style?: CSSProperties;
+  buttonClassName?: string;
+  buttonStyle?: CSSProperties;
+  listClassName?: string;
+  listStyle?: CSSProperties;
 }
 
 const defaultTlds = ["com", "net", "org", "in", "uk"];
 const defaultMails = ["gmail", "baidu", "yahoo", "hotmail"];
-// const styles = "";
 
-const Input = ({ className, tlds, mails, ...props }: InputProps) => {
+const Input = ({
+  className,
+  listStyle,
+  listClassName,
+  buttonStyle,
+  buttonClassName,
+  tlds,
+  mails,
+  ...props
+}: InputProps) => {
   tlds ??= defaultTlds;
   mails ??= defaultMails;
 
@@ -48,18 +61,28 @@ const Input = ({ className, tlds, mails, ...props }: InputProps) => {
           onChange={(e) => onChange(e.target.value)}
         />
         {showMails && (
-          <Listbox>
+          <Listbox className={listClassName} style={listStyle}>
             {mails.map((mail) => (
-              <ListButton key={mail} onClick={() => onChoose(mail)}>
+              <ListButton
+                key={mail}
+                className={buttonClassName}
+                style={buttonStyle}
+                onClick={() => onChoose(mail)}
+              >
                 {mail}
               </ListButton>
             ))}
           </Listbox>
         )}
         {showTlds && (
-          <Listbox>
+          <Listbox className={listClassName} style={listStyle}>
             {tlds.map((tld) => (
-              <ListButton key={tld} onClick={() => onChoose(tld)}>
+              <ListButton
+                key={tld}
+                className={buttonClassName}
+                style={buttonStyle}
+                onClick={() => onChoose(tld)}
+              >
                 {tld}
               </ListButton>
             ))}
@@ -70,17 +93,23 @@ const Input = ({ className, tlds, mails, ...props }: InputProps) => {
   );
 };
 
-const Listbox = ({ children }: { children: ReactNode }) => (
-  <div className="flex flex-col w-full max-w-xs mt-2 bg-red-300 p-1 rounded-md">{children}</div>
+type ListboxProps = ComponentPropsWithoutRef<"div">;
+
+const Listbox = ({ children, className, ...props }: ListboxProps) => (
+  <div
+    {...props}
+    className={twMerge("flex flex-col w-full max-w-xs mt-2 bg-red-300 p-1 rounded-md", className)}
+  >
+    {children}
+  </div>
 );
 
 type ListButtonProps = ComponentPropsWithoutRef<"button">;
 
-const ListButton = ({ onClick, children, ...props }: ListButtonProps) => {
+const ListButton = ({ className, children, ...props }: ListButtonProps) => {
   return (
     <button
-      className="w-full p-2 hover:bg-indigo-400 rounded-lg"
-      onClick={onClick}
+      className={twMerge("w-full p-2 hover:bg-indigo-400 rounded-lg", className)}
       type="button"
       {...props}
     >
